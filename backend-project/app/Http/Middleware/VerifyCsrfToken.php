@@ -12,6 +12,8 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        //
+        // เพิ่ม URL ที่ต้องการยกเว้น เช่น 'api/login', 'api/register'
+        'api/login',
+        'api/register',
     ];
 }
