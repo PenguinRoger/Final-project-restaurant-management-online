@@ -1,0 +1,108 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 16rem; /* Offset by the sidebar width */
+  right: 0;
+  height: 5rem; /* Header height */
+  padding: 0 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: left 0.3s; /* Smooth transition for sliding effect */
+
+  &.collapsed {
+    left: 4rem; /* Adjust this value according to your collapsed sidebar width */
+  }
+  .left-container {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+
+    .menu-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem; /* 32px */
+      height: 2rem; /* 32px */
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      margin-right: 1rem; /* Spacing between menu and search */
+
+      .c-icon {
+        font-size: 1rem; /* 16px */
+        color: #4a5568; /* Gray-700 */
+      }
+
+      &:hover {
+        background-color: #edf2f7; /* Gray-200 */
+      }
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+
+      .search-input {
+        height: 2.5rem; /* 40px */
+        padding: 0 1rem; /* 16px */
+        background-color: #e2e8f0; /* Tailwind bg-gray-200 */
+        border-radius: 9999px; /* Fully rounded */
+        outline: none;
+        border: none;
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Focus outline */
+        }
+      }
+    }
+  }
+
+  .actions-container {
+    display: flex;
+    align-items: center;
+
+    .notification-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 2rem; /* 32px */
+      width: 2rem; /* 32px */
+      color: #fff;
+      border-radius: 9999px; /* Fully rounded */
+      transition: background-color 0.2s;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #cdd0dd; /* Tailwind hover:bg-blue-700 */
+      }
+
+      .c-icon {
+        font-size: 0.875rem; /* 14px */
+        color: #131313; /* White */
+      }
+    }
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      margin-left: 1rem; /* 16px */
+
+      .user-image {
+        width: 2.5rem; /* 40px */
+        height: 2.5rem; /* 40px */
+        border-radius: 50%;
+      }
+
+      .user-name {
+        margin-left: 0.5rem; /* 8px */
+        font-size: 1.125rem; /* 18px */
+        font-weight: 500;
+      }
+    }
+  }
+}
