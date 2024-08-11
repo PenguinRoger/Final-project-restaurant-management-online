@@ -9,8 +9,6 @@ dotenv.config();
 // import mssql_db from './db/connection/mssql_database';
 import Models from './models';
 import router from './routes';
-import contextMiddleware from './routes/contextMiddleware';
-import logMiddleware from './routes/logMiddleware';
 import expressContext from 'express-request-context';
 
 const app: Express = express();
@@ -29,7 +27,6 @@ app.use(cors());
 app.use(bodyParser.json());
 // set model to context
 app.use(expressContext());
-app.use(logMiddleware);
 // app.use(contextMiddleware(models));
 
 router(app);
