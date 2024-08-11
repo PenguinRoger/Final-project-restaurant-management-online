@@ -1,17 +1,20 @@
 import {
     Sequelize,
-  } from 'sequelize';
+} from 'sequelize';
 
+  import Menu from "./Menu";
 
-
+  export type models = {
+    sequelize: Sequelize,
+  }
   class Models {
     public sequelize: Sequelize;
-
+    public Menu: typeof Menu;
   
-
   public constructor(sequelize: Sequelize) {
-
-
+    this.sequelize = sequelize
+    this.Menu = Menu.initialize(sequelize)
+    
     this.loopAssociates();
   }
 

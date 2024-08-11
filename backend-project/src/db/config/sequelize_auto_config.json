@@ -1,0 +1,7 @@
+{
+    "dialectOptions": {
+        "requestTimeout": 30000,
+            "encrypt": true,
+            "enableArithAbort": true
+        }
+}
