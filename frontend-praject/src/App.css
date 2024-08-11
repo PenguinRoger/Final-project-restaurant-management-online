@@ -2,6 +2,8 @@
 @import "./components/navbar/Header.scss";
 @import "./components/navbar/Sidebar.scss";
 @import "./page/Dashboard.scss";
+@import "./page/menu/Menu.scss";
+@IMPORT "./page/menu/Choice.scss";
 
 .app-container {
   display: flex;
