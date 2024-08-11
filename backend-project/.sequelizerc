@@ -1,0 +1,9 @@
+const path = require('path');
+
+module.exports = {
+  'config': path.resolve(path.join('sequalize-cli','config'), 'config.js'),
+  'models-path': path.resolve(path.join('src'), 'models'),
+  'seeders-path': path.resolve(path.join('sequalize-cli'), 'seeders'),
+  'migrations-path': path.resolve(path.join('sequalize-cli'), 'migrations')
+};
+
