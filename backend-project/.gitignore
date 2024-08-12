@@ -1,0 +1,13 @@
+.idea/
+.vscode/
+coverage/
+node_modules/
+build/
+dist/
+tmp/
+temp/
+
+.env
+jest_report.txt
+*.log
+
