@@ -1,1 +1,0 @@
-https://tediousjs.github.io/tedious/api-connection.html#function_newConnection

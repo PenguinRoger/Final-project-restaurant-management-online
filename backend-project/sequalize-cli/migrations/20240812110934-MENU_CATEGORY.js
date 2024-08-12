@@ -5,32 +5,16 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.sequelize.transaction(t => {
       return Promise.all([
-        queryInterface.createTable('EQ_ATTACH', {
-          EQ_ATTACHNO: {
+        queryInterface.createTable('MENU_CATEGORY', {
+          MENU_CATEGORYNO: {
             type: Sequelize.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey: true
           },
-          EQNO: {
+          MENU_CATEGORYNAME: {
             type: Sequelize.STRING,
             allowNull: false
-          },
-          DOCNAME: {
-            type: Sequelize.STRING,
-            allowNull: true
-          },
-          EXTENSION: {
-            type: Sequelize.STRING,
-            allowNull: true
-          },
-          URL: {
-            type: Sequelize.STRING,
-            allowNull: false
-          },
-          SIZE: {
-            type: Sequelize.INTEGER,
-            allowNull: true
           },
           CREATEDATE: {
             type: Sequelize.DATE,
@@ -51,6 +35,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('EQ_ATTACH');
+    await queryInterface.dropTable('MENU_CATEGORY');
   }
 };

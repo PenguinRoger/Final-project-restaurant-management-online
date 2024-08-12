@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const config :Options = {
-    "dialect": "mssql",
+    "dialect": "mysql",
     "port": !!process.env.APP_DB_PORT ? parseInt(process.env.APP_DB_PORT) : null,
     "logging": process.env.NODE_ENV==="development",
     "host": `${process.env.APP_DB_HOST || 'localhost'}`,
@@ -19,7 +19,7 @@ export const config :Options = {
 
 const sequelize = new Sequelize(
     process.env.APP_DB_NAME, 
-    process.env.APP_DB_USERNAME ||'sa', 
+    process.env.APP_DB_USERNAME, 
     process.env.APP_DB_PASSWORD, 
     config);
 
