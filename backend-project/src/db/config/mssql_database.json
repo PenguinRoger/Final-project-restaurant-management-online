@@ -1,0 +1,17 @@
+{
+  "development": {
+    "username": "sa",
+    "password": "1234",
+    "database": "WEBPM_Dev",
+    "dialect": "mssql",
+    "seederStorage": "sequelize",
+    "logging": false,
+    "host": "localhost",
+    "dialectOptions": {
+      "requestTimeout": 30000,
+      "options": {
+        "instanceName": "SQLEXP2017"
+      }
+    }
+  }
+}
