@@ -1,0 +1,12 @@
+.idea/
+.vscode/
+coverage/
+
+build/
+dist/
+tmp/
+temp/
+
+jest_report.txt
+*.log
+

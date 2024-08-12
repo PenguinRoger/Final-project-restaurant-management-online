@@ -1,0 +1,13 @@
+{
+    "dialectOptions": {
+        "requestTimeout": 30000,
+        "options": {
+            "instanceName": "SQLEXP2017",
+            "cryptoCredentialsDetails": {
+                "minVersion": "TLSv1"
+            },
+            "encrypt": true,
+            "enableArithAbort": true
+        }
+    }
+}
