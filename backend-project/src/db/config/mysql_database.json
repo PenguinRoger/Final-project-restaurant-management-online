@@ -1,0 +1,14 @@
+{
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "restaurant-management-online",
+    "dialect": "mysql",
+    "seederStorage": "sequelize",
+    "logging": false,
+    "host": "localhost",
+    "dialectOptions": {
+      "requestTimeout": 30000
+    }
+  }
+}
