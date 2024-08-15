@@ -33,9 +33,9 @@ const Category: React.FC = () => {
 
   return (
     <div className="category-page">
-      <h1>หมวดหมู่</h1>
+      <h1>ประเภท</h1>
       <div className="category-controls">
-        <button className="add-category-btn" onClick={addCategory}>+ เพิ่มหมวดหมู่</button>
+        <button className="add-category-btn" onClick={addCategory}>+ เพิ่มประเภท</button>
         <button className="save-category-btn" onClick={saveCategories}>บันทึก</button>
       </div>
       <div className="category-list">
@@ -47,7 +47,7 @@ const Category: React.FC = () => {
               value={category}
               onChange={(e) => updateCategory(index, e.target.value)}
               className="category-input"
-              placeholder="แก้ไขหมวดหมู่"
+              placeholder="แก้ไขประเภท"
             />
             <button className="edit-btn">
               <FontAwesomeIcon icon={faPen} />
