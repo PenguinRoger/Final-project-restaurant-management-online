@@ -28,7 +28,16 @@ module.exports = {
           },
           DELETEDATE: {
             type: Sequelize.DATE
-          }
+          },
+          CREATEUSER: {
+            type: Sequelize.INTEGER(11)
+          },
+          UPDATEUSER: {
+            type: Sequelize.INTEGER(11)
+          },
+          DELETEUSER: {
+            type: Sequelize.INTEGER(11)
+          },
         }, { transaction: t })
       ])
     })

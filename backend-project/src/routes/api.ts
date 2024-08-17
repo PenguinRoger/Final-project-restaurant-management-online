@@ -1,6 +1,7 @@
 import { Router } from "express";
 
 import menuCategoryHandler from "@handler/menuCategoryHandler";
+import SubMenuCategoryHandler from "@handler/SubMenuCategoryHandler";
 
 const routes = (router: Router) => {
     const apiRouter = Router();
@@ -12,6 +13,12 @@ const routes = (router: Router) => {
     apiRouter.put("/menu-category/:id", menuCategoryHandler.updateMenuCategory);
     apiRouter.delete("/menu-category/:id", menuCategoryHandler.deleteMenuCategory);
 
+    //sub menu category
+    apiRouter.get("/sub-menu-category", SubMenuCategoryHandler.listSubMenuCate);
+    apiRouter.get("/sub-menu-category/:id", SubMenuCategoryHandler.getSubMenuCate);
+    apiRouter.post("/sub-menu-category", SubMenuCategoryHandler.createSubMenuCate);
+    apiRouter.put("/sub-menu-category/:id", SubMenuCategoryHandler.updateSubMenuCate);
+    apiRouter.delete("/sub-menu-category/:id", SubMenuCategoryHandler.deleteSubMenuCate);
     router.use("/api", apiRouter);
 }
 
