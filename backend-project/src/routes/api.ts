@@ -2,6 +2,7 @@ import { Router } from "express";
 
 import menuCategoryHandler from "@handler/menuCategoryHandler";
 import SubMenuCategoryHandler from "@handler/SubMenuCategoryHandler";
+import menuHandler from "@handler/menuHandler";
 
 const routes = (router: Router) => {
     const apiRouter = Router();
@@ -19,6 +20,14 @@ const routes = (router: Router) => {
     apiRouter.post("/sub-menu-category", SubMenuCategoryHandler.createSubMenuCate);
     apiRouter.put("/sub-menu-category/:id", SubMenuCategoryHandler.updateSubMenuCate);
     apiRouter.delete("/sub-menu-category/:id", SubMenuCategoryHandler.deleteSubMenuCate);
+
+    //menu
+    apiRouter.get("/menu", menuHandler.listMenu);
+    apiRouter.get("/menu/:id", menuHandler.getMenu);
+    apiRouter.post("/menu", menuHandler.createMenu);
+    apiRouter.put("/menu/:id", menuHandler.updateMenu);
+    apiRouter.delete("/menu/:id", menuHandler.deleteMenu);
+    
     router.use("/api", apiRouter);
 }
 
