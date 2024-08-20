@@ -73,6 +73,7 @@
   .sidebar-nav {
     flex: 1;
     padding: 1rem; /* 16px */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
 
     .sidebar-list,
     .team-list {
