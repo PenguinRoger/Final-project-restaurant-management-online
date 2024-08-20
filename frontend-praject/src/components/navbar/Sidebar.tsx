@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CIcon from '@coreui/icons-react';
-import { cilHome, cilGroup, cilFolder, cilCalendar, cilFile, cilChartPie, cilMenu } from '@coreui/icons';
+import { cilHome, cilGroup, cilFolder, cilCalendar, cilFile, cilChartPie, cilMenu, cilRoom, cilDollar, cilSettings } from '@coreui/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import './Sidebar.scss';
@@ -13,6 +13,7 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ isCollapsed }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isEmployeeMenuOpen, setIsEmployeeMenuOpen] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -20,6 +21,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isCollapsed }) => {
 
   const toggleEmployeeMenu = () => {
     setIsEmployeeMenuOpen(!isEmployeeMenuOpen);
+  };
+
+  const toggleSettings = () => {
+    setIsSettingsOpen(!isSettingsOpen);
   };
 
   return (
@@ -48,6 +53,25 @@ const Sidebar: React.FC<SidebarProps> = ({ isCollapsed }) => {
               {!isCollapsed && <span className="ml-3">Projects</span>}
             </Link>
           </li>
+
+          <div className="sidebar-teams">
+            <h2 className="teams-header">MAIN</h2>
+            <ul className="team-list">
+              <li className='sidebar-item'>
+                <Link to="/tables" className="sidebar-link" >
+                  <CIcon icon={cilRoom} className="c-icon" />
+                  {!isCollapsed && <span className="ml-3">การจัดการโต๊ะ</span>}
+                </Link>
+              </li>
+
+              <li className='sidebar-item'>
+                <Link to="#" className="sidebar-link">
+                  <CIcon icon={cilDollar} className="c-icon" />
+                  {!isCollapsed && <span className="ml-3">สั่งเเละชำระเงิน</span>}
+                </Link>
+              </li>
+            </ul>
+          </div>
 
           <div className="sidebar-teams">
             <h2 className="teams-header">MENU</h2>
@@ -81,25 +105,25 @@ const Sidebar: React.FC<SidebarProps> = ({ isCollapsed }) => {
                 )}
               </li>
 
-              <li className={`sidebar-item ${isEmployeeMenuOpen ? 'open' : ''}`}>
-                <a href="#" className="sidebar-link" onClick={toggleEmployeeMenu}>
-                  <CIcon icon={cilMenu} className="c-icon" />
-                  {!isCollapsed && <span className="ml-3">เพิ่มข้อมูลพนักงาน</span>}
-                  {!isCollapsed && (
-                    <FontAwesomeIcon icon={faAngleDown} className={`dropdown-icon ${isEmployeeMenuOpen ? 'open' : ''}`} />
-                  )}
-                </a>
-                {isEmployeeMenuOpen && (
-                  <ul className={`sub-menu ${isCollapsed ? 'side-expanded' : ''}`}>
-                    <li className="sidebar-item">
-                      <Link to="/employee-info" className="sidebar-link">
-                        <span className="ml-3">ข้อมูลพนักงาน</span>
-                      </Link>
-                    </li>
-                  </ul>
+
+            </ul><li className={`sidebar-item ${isEmployeeMenuOpen ? 'open' : ''}`}>
+              <a href="#" className="sidebar-link" onClick={toggleEmployeeMenu}>
+                <CIcon icon={cilMenu} className="c-icon" />
+                {!isCollapsed && <span className="ml-3">เพิ่มข้อมูลพนักงาน</span>}
+                {!isCollapsed && (
+                  <FontAwesomeIcon icon={faAngleDown} className={`dropdown-icon ${isEmployeeMenuOpen ? 'open' : ''}`} />
                 )}
-              </li>
-            </ul>
+              </a>
+              {isEmployeeMenuOpen && (
+                <ul className={`sub-menu ${isCollapsed ? 'side-expanded' : ''}`}>
+                  <li className="sidebar-item">
+                    <Link to="/employee-info" className="sidebar-link">
+                      <span className="ml-3">ข้อมูลพนักงาน</span>
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
           </div>
 
           <div className="sidebar-teams">
@@ -125,6 +149,34 @@ const Sidebar: React.FC<SidebarProps> = ({ isCollapsed }) => {
               </li>
             </ul>
           </div>
+
+          <div className="sidebar-teams">
+            <h2 className="teams-header">SETTING</h2>
+            <li className={`sidebar-item ${isSettingsOpen ? 'open' : ''}`}>
+              <a href="#" className="sidebar-link" onClick={toggleSettings}>
+                <CIcon icon={cilSettings} className="c-icon" />
+                {!isCollapsed && <span className="ml-3">การตั้งค่า</span>}
+                {!isCollapsed && (
+                  <FontAwesomeIcon
+                    icon={faAngleDown}
+                    className={`dropdown-icon ${isSettingsOpen ? 'open' : ''}`}
+                  />
+                )}
+              </a>
+              {isSettingsOpen && (
+                <ul className={`sub-menu ${isCollapsed ? 'side-expanded' : ''}`}>
+                  <li className="sidebar-item">
+                    <Link to="/setting/setting-tables" className="sidebar-link">
+                      <span className="ml-3">จัดการโต๊ะ</span>
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+          </div>
+
+
+
         </ul>
       </nav>
     </aside>

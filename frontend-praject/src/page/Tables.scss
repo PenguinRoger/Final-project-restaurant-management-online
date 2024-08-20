@@ -1,0 +1,206 @@
+.tables-page {
+  display: flex;
+  margin-top: 95px;
+  height: calc(100vh - 95px);
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f4f7fc;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tables-grid {
+  flex: 3;
+  display: grid;
+  margin-right: 20px;
+  max-width: 100%;
+  grid-template-columns: repeat(4, 1fr); /* แบ่งเป็น 4 คอลัมน์ */
+  gap: 16px; /* ช่องว่างระหว่างโต๊ะ */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.table-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eef1f7;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.table-btn {
+  width: 80px; /* ขยายขนาดโต๊ะให้ใหญ่ขึ้น */
+  height: 80px;
+  background-color: #3b82f6; /* สีพื้นโต๊ะ */
+  border: none; /* เอาขอบออกเพื่อให้ดูทันสมัย */
+  border-radius: 50%; /* ปรับให้เป็นวงกลม */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem; /* ขยายขนาดตัวอักษร */
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    background-color: #2563eb; /* สีเข้มขึ้นเมื่อ hover */
+    transform: scale(1.1); /* ขยายเมื่อ hover */
+  }
+
+  &.active {
+    background-color: #1e40af;
+  }
+}
+
+.seat {
+  width: 24px;
+  height: 24px;
+  background-color: #d1d5db;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.seat-left {
+  left: -40px;
+}
+
+.seat-right {
+  right: -40px;
+}
+
+.seat-top {
+  top: -40px;
+}
+
+.seat-bottom {
+  bottom: -40px;
+}
+
+.order-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  text-align: center;
+
+  p {
+    margin-bottom: 20px;
+    color: #6b7280;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .create-order-btn {
+    padding: 15px 25px;
+    background-color: #10b981; /* สีเขียวสดใส */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background-color: #059669; /* สีเขียวเข้มขึ้นเมื่อ hover */
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.customer-input-section {
+  margin: 20px 0;
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .numpad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #ddd;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.5rem;
+
+      &:hover {
+        background-color: #ccc;
+      }
+    }
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.order-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: #e55d00;
+    transform: translateY(-2px);
+  }
+}
