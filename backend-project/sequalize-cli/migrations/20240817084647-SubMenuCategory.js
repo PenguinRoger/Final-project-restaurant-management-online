@@ -25,7 +25,7 @@ module.exports = {
           onUpdate: 'CASCADE',
           onDelete: 'CASCADE'
         },
-        MENU_CATEGORYPRICE: {
+        SUB_MENU_CATEGORYPRICE: {
           type: Sequelize.DECIMAL(15, 2),
           allowNull: true,
         },        
